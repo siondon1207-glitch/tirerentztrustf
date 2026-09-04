@@ -1,23 +1,878 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+
+
+  <!-- 구조화 데이터 (JSON-LD) for Search Engines & LLM / AI Crawlers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "2026년 타이어 종류 완벽 가이드: 사계절용, 올웨더, 썸머, 윈터, 전기차 전용 타이어 비교 및 교체 견적 분석",
+        "description": "국내외 주요 10대 브랜드 38개 타이어 모델의 계절별, 성능별, 차종별 타이어 종류 분류와 규격 확인법, 교체 비용 계산 및 장단점 심층 분석",
+        "inLanguage": "ko-KR",
+        "author": {
+          "@type": "Organization",
+          "name": "타이어 기술 분석 연구센터"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "오토모빌 종합 정보 포털",
+          "url": "https://auto.reliabledone.com"
+        },
+        "datePublished": "2026-01-10T09:00:00+09:00",
+        "dateModified": "2026-03-15T14:30:00+09:00",
+        "mainEntityOfPage": "https://auto.reliabledone.com/tire-types-guide"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "홈",
+            "item": "https://auto.reliabledone.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "자동차 유지보수",
+            "item": "https://auto.reliabledone.com/maintenance"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "타이어 종류 가이드",
+            "item": "https://auto.reliabledone.com/tire-types-guide"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "사계절 타이어(All-Season)와 올웨더 타이어(All-Weather)의 핵심 차이점은 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "사계절 타이어(M+S)는 온화한 기후와 마른 노면, 젖은 노면에서 정숙성과 승차감에 초점을 맞춘 타이어인 반면, 올웨더 타이어는 유럽 인증 겨울용 삼봉눈꽃마크(3PMSF)를 획득하여 영하의 저온 및 가벼운 눈길에서도 뛰어난 제동력과 견인력을 제공하는 유럽형 4계절 타이어입니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "전기차(EV) 전용 타이어는 일반 내연기관 타이어와 어떤 점이 다른가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "전기차 전용 타이어는 무거운 배터리 하중을 견디는 고하중 설계(HL 규격), 초반 최대토크에 대응하는 내마모성 컴파운드 강화, 모터의 정숙성에 맞춘 흡음 스펀지 탑재(사운드 압소버 기술), 그리고 주행거리 연장을 위한 극저회전저항 트레드 패턴이 적용됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "타이어 교체 비용은 평균 얼마이며 온라인 다이렉트 교체가 더 저렴한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "국산 17-18인치 컴포트 타이어 4짝 기준 평균 교체 비용은 40만원에서 65만원 선이며, 오프라인 일반 매장보다 온라인 다이렉트 전문 사이트에서 최저가 비교 후 제휴 장착점으로 배송하여 공임만 지불하고 장착하는 방법이 20%에서 최대 40% 이상 저렴합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "타이어 마모 한계선과 권장 교체 주기는 어떻게 되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "법적 마모 한계선은 1.6mm이지만 안전을 위한 권장 교체 마모 깊이는 2.8mm에서 3.0mm입니다. 주행거리 기준으로는 4만km에서 6만km 사이, 기간 기준으로는 제조일자(DOT)로부터 4년에서 5년 경과 시 고무 경화 현상으로 인해 교체하는 것이 안전합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "타이어 렌탈 서비스와 일시불 구매 중 어떤 선택이 유리한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "초기 목돈 지출 없이 12개월, 24개월, 36개월 등 약정 분납을 원하고 정기적인 휠 얼라인먼트 점검, 타이어 위치 교환, 무상 조기 마모 파손 보증 혜택을 원하며 제휴카드 전월 실적 할인을 적용받을 수 있다면 타이어 렌탈이 유리합니다. 반면 총 지출 금액만을 최우선으로 고려한다면 온라인 다이렉트 일시불 구매가 가장 저렴합니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Modern Dynamic Palette & Clean UI Typography */
+    :root {
+      --primary: #1e40af;
+      --primary-light: #3b82f6;
+      --primary-subtle: #eff6ff;
+      --accent: #0d9488;
+      --accent-subtle: #f0fdfa;
+      --dark: #0f172a;
+      --gray-dark: #334155;
+      --gray-med: #64748b;
+      --gray-light: #e2e8f0;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --warn-bg: #fffbeb;
+      --warn-border: #f59e0b;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(15,23,42,0.08);
+      --shadow-lg: 0 10px 25px rgba(15,23,42,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--gray-dark);
+      line-height: 1.8;
+      font-size: 16px;
+      word-break: keep-all;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%);
+      color: #ffffff;
+      padding: 60px 20px 45px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+    header p {
+      font-size: 1.15rem;
+      max-width: 860px;
+      margin: 0 auto 25px;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: -25px auto 40px;
+      padding: 0 20px;
+    }
+
+    nav.toc {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-light);
+    }
+    nav.toc h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+      border-bottom: 2px solid var(--primary-subtle);
+      padding-bottom: 8px;
+    }
+    nav.toc ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      list-style: none;
+    }
+    nav.toc a {
+      color: var(--gray-dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 8px 12px;
+      background: var(--bg-page);
+      border-radius: var(--radius-sm);
+      display: block;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    nav.toc a:hover {
+      background: var(--primary-subtle);
+      color: var(--primary);
+      border-color: var(--primary-light);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    section {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 35px 30px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-light);
+    }
+
+    h2 {
+      font-size: 1.85rem;
+      color: var(--dark);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--primary);
+      letter-spacing: -0.01em;
+    }
+    h3 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin: 28px 0 14px;
+      padding-left: 12px;
+      border-left: 4px solid var(--accent);
+    }
+    h4 {
+      font-size: 1.15rem;
+      color: var(--gray-dark);
+      margin: 18px 0 10px;
+      font-weight: 700;
+    }
+
+    p { margin-bottom: 16px; font-size: 1.05rem; }
+    ul, ol { margin: 10px 0 20px 24px; }
+    li { margin-bottom: 8px; font-size: 1.02rem; }
+
+    .highlight-box {
+      background-color: var(--primary-subtle);
+      border-left: 5px solid var(--primary-light);
+      padding: 20px;
+      margin: 24px 0;
+      border-radius: var(--radius-sm);
+    }
+    .warn-box {
+      background-color: var(--warn-bg);
+      border-left: 5px solid var(--warn-border);
+      padding: 20px;
+      margin: 24px 0;
+      border-radius: var(--radius-sm);
+    }
+    .accent-box {
+      background-color: var(--accent-subtle);
+      border-left: 5px solid var(--accent);
+      padding: 20px;
+      margin: 24px 0;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Comparison Table Styling */
+    .table-container {
+      overflow-x: auto;
+      margin: 25px 0;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--gray-light);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+      background: #ffffff;
+      min-width: 650px;
+    }
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--gray-light);
+      vertical-align: middle;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: var(--dark);
+      font-weight: 700;
+    }
+    tr:nth-child(even) { background-color: #fafbfc; }
+    tr:hover { background-color: #f0f7ff; }
+
+    /* CSS Bar Chart for Visual Metrics */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin: 24px 0;
+    }
+    .metric-card {
+      background: var(--bg-page);
+      border: 1px solid var(--gray-light);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+    }
+    .metric-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .bar-row {
+      margin-bottom: 10px;
+    }
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .bar-track {
+      background: #e2e8f0;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 5px;
+    }
+    .fill-blue { background: #3b82f6; }
+    .fill-teal { background: #0d9488; }
+    .fill-amber { background: #f59e0b; }
+    .fill-purple { background: #8b5cf6; }
+
+    /* Interactive Simulation / Calculator Mockup */
+    .calc-card {
+      background: linear-gradient(to right bottom, #ffffff, #f8fafc);
+      border: 2px solid var(--primary-light);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin: 25px 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .calc-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+    .form-group select, .form-group input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--gray-light);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      background: #ffffff;
+      color: var(--gray-dark);
+    }
+    .calc-result-box {
+      background: var(--primary-subtle);
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin-top: 15px;
+      text-align: center;
+    }
+    .calc-price {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* FAQ Style */
+    dl.faq-list dt {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 24px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--gray-light);
+    }
+    dl.faq-list dd {
+      margin: 10px 0 20px 0;
+      padding-left: 12px;
+      border-left: 3px solid var(--primary-light);
+      font-size: 1.02rem;
+      color: var(--gray-dark);
+    }
+
+    /* External Reference Box */
+    .ref-section {
+      background: #f1f5f9;
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .ref-list {
+      list-style: none;
+      margin-left: 0;
+    }
+    .ref-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+    }
+    .ref-list li:last-child { border-bottom: none; }
+    .ref-list a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .ref-list a:hover { text-decoration: underline; }
+
+    footer {
+      background: var(--dark);
+      color: #94a3b8;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 0.9rem;
+      border-top: 1px solid #334155;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header { padding: 40px 15px 30px; }
+      header h1 { font-size: 1.85rem; }
+      section { padding: 25px 18px; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.25rem; }
+      .container { padding: 0 12px; margin-top: -15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>2026 타이어 종류 완벽 분석 가이드</h1>
+    <p>사계절용, 올웨더, 여름용, 겨울용, 전기차(EV) 전용 타이어 종류별 성능 비교와 국내외 30개 이상 대표 브랜드 모델 스펙 분석, 온라인 다이렉트 최저가 교체 비용 견적 계산법 총정리</p>
+  </header>
+
+  <div class="container">
+    <nav class="toc" aria-label="문서 목차">
+      <h2>핵심 가이드 목차 바로가기</h2>
+      <ul>
+        <li><a href="#section-types">1. 타이어 종류 총정리 및 분류</a></li>
+        <li><a href="#section-specs">2. 타이어 규격 및 표기법 해독</a></li>
+        <li><a href="#section-models">3. 30개 대표 모델 성능 및 순위</a></li>
+        <li><a href="#section-price">4. 교체 가격 및 견적 계산기</a></li>
+        <li><a href="#section-purchase">5. 저렴한곳 구매 및 렌탈 비교</a></li>
+        <li><a href="#section-ev">6. 전기차 전용 타이어 특징</a></li>
+        <li><a href="#section-maintenance">7. 마모도 점검 및 관리 수명</a></li>
+        <li><a href="#section-faq">8. 자주 묻는 질문 (FAQ)</a></li>
+      </ul>
     </nav>
+
     <main>
-      <h1>Home page</h1>
+      <!-- Section 1 -->
+      <section id="section-types">
+        <h2>1. 타이어 종류 총정리: 계절별, 용도별, 차종별 핵심 분류</h2>
+        <p>자동차 타이어는 차량이 노면과 맞닿는 유일한 부품으로 주행 안정성, 제동력, 승차감, 연비, 소음 억제력을 결정하는 가장 중요한 소모품입니다. 타이어 종류는 크게 계절별 특성(사계절용, 올웨더, 여름용, 겨울용)과 주행 목적 및 차량 형태(컴포트 프리미엄, 스포츠 UHP, SUV 전용, 전기차 전용, 오프로드 올터레인)에 따라 명확히 구분됩니다. 2026년 기준 타이어 기술은 고효율 실리카 컴파운드와 인공지능 기반 패턴 설계가 접목되어 성능 격차가 세분화되고 있습니다.</p>
+
+        <h3>계절별 타이어 종류 및 특징 비교</h3>
+        <p>운전자의 주행 환경과 거주 지역의 기후 조건에 맞춰 올바른 계절형 타이어를 선택해야 제동 거리 증가와 미끄러짐 사고를 예방할 수 있습니다.</p>
+
+        <div class="metric-grid">
+          <div class="metric-card">
+            <div class="metric-title">사계절용 타이어 (All-Season, M+S)</div>
+            <div class="bar-row">
+              <div class="bar-label"><span>승차감 및 정숙성</span><span>92%</span></div>
+              <div class="bar-track"><div class="bar-fill fill-blue" style="width:92%;"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label"><span>마일리지 (수명)</span><span>90%</span></div>
+              <div class="bar-track"><div class="bar-fill fill-teal" style="width:90%;"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label"><span>겨울철 눈길 제동력</span><span>45%</span></div>
+              <div class="bar-track"><div class="bar-fill fill-amber" style="width:45%;"></div></div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-title">올웨더 타이어 (All-Weather, 3PMSF)</div>
+            <div class="bar-row">
+              <div class="bar-label"><span>눈길/저온 제동력</span><span>88%</span></div>
+              <div class="bar-track"><div class="bar-fill fill-purple" style="width:88%;"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label"><span>젖은 노면 배수성</span><span>94%</span></div>
+              <div class="bar-track"><div class="bar-fill fill-teal" style="width:94%;"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label"><span>고속 정숙성</span><span>72%</span></div>
+              <div class="bar-track"><div class="bar-fill fill-blue" style="width:72%;"></div></div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-title">여름용 타이어 (Summer / UHP)</div>
+            <div class="bar-row">
+              <div class="bar-label"><span>마른 노면 접지력</span><span>98%</span></div>
+              <div class="bar-track"><div class="bar-fill fill-blue" style="width:98%;"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label"><span>고속 코너링 안정성</span><span>96%</span></div>
+              <div class="bar-track"><div class="bar-fill fill-teal" style="width:96%;"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label"><span>영상 7도 이하 저온 제동력</span><span>20%</span></div>
+              <div class="bar-track"><div class="bar-fill fill-amber" style="width:20%;"></div></div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-title">겨울용 스터드리스 타이어 (Winter Studless)</div>
+            <div class="bar-row">
+              <div class="bar-label"><span>빙판/설천 제동력</span><span>99%</span></div>
+              <div class="bar-track"><div class="bar-fill fill-purple" style="width:99%;"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label"><span>저온 고무 유연성</span><span>98%</span></div>
+              <div class="bar-track"><div class="bar-fill fill-blue" style="width:98%;"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label"><span>여름철 고온 마모 속도</span><span>빠름</span></div>
+              <div class="bar-track"><div class="bar-fill fill-amber" style="width:85%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h4>사계절용 타이어와 올웨더 타이어의 결정적 차이점</h4>
+          <p>국내 출고형으로 가장 많이 장착되는 일반 사계절용 타이어(Mud+Snow)는 영상 7도 이상의 상온에서 우수한 승차감과 긴 수명을 자랑하지만, 영하권 추위에서는 고무가 딱딱하게 굳는 글래스 트랜지션 현상으로 제동 거리가 급격히 늘어납니다. 반면 유럽 인증 삼봉눈꽃마크(3PMSF, Three-Peak Mountain Snowflake)를 각인한 올웨더 타이어는 특수 배합 실리카 고무와 V자형 트레드 배수 홈을 적용하여 한겨울 영하의 기온과 눈길에서도 체인 없이 안정적인 주행 성능을 발휘합니다.</p>
+        </div>
+
+        <h3>성향 및 용도별 타이어 분류</h3>
+        <ul>
+          <li><strong>프리미엄 컴포트 투어링:</strong> 노면 소음 차단, 부드러운 승차감, 고속 직진 안정성을 최우선으로 설계한 패밀리 세단 및 일상 출퇴근용 타이어 종류.</li>
+          <li><strong>스포츠 UHP (초고성능):</strong> 고출력 차량의 급가속, 급제동, 급격한 코너링 시 횡방향 지지력을 극대화한 단단한 사이드월 구조의 타이어 종류.</li>
+          <li><strong>SUV 전용 고하중 타이어:</strong> 차체 무게 중심이 높고 공차중량이 무거운 준대형 SUV 차량을 위해 비드부와 벨트 보강재를 강화한 타이어 종류.</li>
+          <li><strong>올터레인 (A/T) 및 머드터레인 (M/T):</strong> 오프로드 자갈길, 진흙길, 험로 주행 시 트레드 뜯김을 방지하고 견인력을 극대화한 레저용 타이어 종류.</li>
+        </ul>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="section-specs">
+        <h2>2. 타이어 규격 및 사이드월 표기법 완전 해독</h2>
+        <p>내 차에 적합한 타이어 종류를 선택하기 위해서는 타이어 측면(사이드월)에 양각으로 새겨진 규격 숫자와 기호를 정확히 읽을 수 있어야 합니다. 규격이 일치하지 않는 타이어를 장착할 경우 속도계 오차 발생, 휠 하우스 간섭, 주행 제어 장치(ESC/ABS) 오작동의 원인이 됩니다.</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>표기 항목 예시 (245/45R18 100W)</th>
+                <th>의미 및 단위</th>
+                <th>상세 설명 및 점검 기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>245 (단면폭)</strong></td>
+                <td>타이어 폭 (mm)</td>
+                <td>노면과 접촉하는 타이어 트레드의 가로 너비</td>
+              </tr>
+              <tr>
+                <td><strong>45 (편평비)</strong></td>
+                <td>단면 높이 비율 (%)</td>
+                <td>단면폭 대비 사이드월 높이의 비율 (수치가 낮을수록 코너링 성능 향상, 승차감 하락)</td>
+              </tr>
+              <tr>
+                <td><strong>R (구조 방식)</strong></td>
+                <td>래디얼 (Radial)</td>
+                <td>현대 승용차의 표준 내부 코드 배열 구조</td>
+              </tr>
+              <tr>
+                <td><strong>18 (림 직경)</strong></td>
+                <td>휠 크기 (Inch)</td>
+                <td>타이어를 결합하는 휠의 직경 인치</td>
+              </tr>
+              <tr>
+                <td><strong>100 (하중 지수)</strong></td>
+                <td>최대 하중 (Load Index)</td>
+                <td>100 기준 1본당 최대 800kg의 하중 지지 가능</td>
+              </tr>
+              <tr>
+                <td><strong>W (속도 등급)</strong></td>
+                <td>최고 허용 속도</td>
+                <td>W 등급 기준 최고 속도 270km/h까지 안전성 보장</td>
+              </tr>
+              <tr>
+                <td><strong>DOT 2426</strong></td>
+                <td>생산 주차 및 연도</td>
+                <td>앞 두 자리(24)는 24번째 주, 뒤 두 자리(26)는 2026년 제조를 의미</td>
+              </tr>
+              <tr>
+                <td><strong>Treadwear 500</strong></td>
+                <td>내마모 지수 (UTQG)</td>
+                <td>기준 수치(100) 대비 5배의 내마모 수명을 나타내는 척도</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="warn-box">
+          <h4>타이어 제조일자(DOT 코드) 확인 요령</h4>
+          <p>온라인 다이렉트 최저가 주문 시 반드시 DOT 생산 주차를 확인해야 합니다. 고무 제품 특성상 제조 후 6개월에서 1년 사이에 유분이 안정화되어 가장 이상적인 내구성을 발휘하며, 3년 이상 방치된 미사용 재고 타이어는 고무 산화 및 경화로 인해 안전성이 저하될 수 있습니다.</p>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="section-models">
+        <h2>3. 2026년 타이어 브랜드 순위 및 30개 이상 대표 모델 비교 분석</h2>
+        <p>국내외 시장에서 유통되는 대표 브랜드 10곳(한국타이어, 금호타이어, 넥센타이어, 미쉐린, 콘티넨탈, 브리지스톤, 피렐리, 굿이어, 요코하마, 던롭)의 주력 모델 38종을 차종 및 주행 성향별로 종합 비교했습니다.</p>
+
+        <h3>국내외 30개 이상 타이어 모델별 카테고리 및 스펙 데이터</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>브랜드</th>
+                <th>대표 모델명</th>
+                <th>카테고리 종류</th>
+                <th>주요 특장점</th>
+                <th>예상 수명(마일리지)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>한국타이어</td><td>벤투스 S2 AS</td><td>프리미엄 컴포트</td><td>최고 수준의 정숙성 및 고속 승차감</td><td>50,000~60,000 km</td></tr>
+              <tr><td>한국타이어</td><td>벤투스 에어 S</td><td>초저소음 컴포트</td><td>2026 차세대 흡음 구조 적용 안락감</td><td>55,000~65,000 km</td></tr>
+              <tr><td>한국타이어</td><td>벤투스 S1 에보3</td><td>스포츠 UHP</td><td>마른/젖은 노면 탁월한 고속 접지력</td><td>35,000~45,000 km</td></tr>
+              <tr><td>한국타이어</td><td>벤투스 프라임4</td><td>밸런스 투어링</td><td>우수한 제동 성능과 균형 잡힌 연비</td><td>50,000~60,000 km</td></tr>
+              <tr><td>한국타이어</td><td>다이나프로 HPX</td><td>SUV 프리미엄</td><td>SUV 최적화 사계절 마일리지 및 편안함</td><td>60,000~75,000 km</td></tr>
+              <tr><td>한국타이어</td><td>키너지 EX</td><td>스탠다드 가성비</td><td>합리적인 가격대 높은 경제성</td><td>50,000~60,000 km</td></tr>
+              <tr><td>한국타이어</td><td>키너지 4S2</td><td>올웨더 (3PMSF)</td><td>유럽 인증 겨울 눈길 주행 보장</td><td>45,000~55,000 km</td></tr>
+              <tr><td>한국타이어</td><td>아이온 에보 (iON)</td><td>전기차 전용 UHP</td><td>EV 순간 토크 대응 및 최저 구름저항</td><td>45,000~55,000 km</td></tr>
+              <tr><td>한국타이어</td><td>아이온 에어 S</td><td>전기차 전용 컴포트</td><td>전기차 특화 초저소음 공명음 차단</td><td>50,000~60,000 km</td></tr>
+              <tr><td>한국타이어</td><td>윈터 아이셉트 에보3</td><td>겨울용 (Winter)</td><td>빙판길 및 영하 노면 최강 제동력</td><td>계절 전용 운용</td></tr>
+
+              <tr><td>금호타이어</td><td>마제스티9 솔루스 TA91</td><td>프리미엄 컴포트</td><td>국내 세단 선호도 최상위 정숙 승차감</td><td>50,000~60,000 km</td></tr>
+              <tr><td>금호타이어</td><td>솔루스 TA51</td><td>미들급 컴포트</td><td>뛰어난 가성비와 롱 마일리지 설계</td><td>60,000~70,000 km</td></tr>
+              <tr><td>금호타이어</td><td>솔루스 TA31</td><td>스탠다드 컴포트</td><td>장수명 경제형 기본 출고 타이어</td><td>50,000~60,000 km</td></tr>
+              <tr><td>금호타이어</td><td>솔루스 TA21</td><td>엔트리 가성비</td><td>저렴한 교체 비용 중심 알뜰형</td><td>45,000~55,000 km</td></tr>
+              <tr><td>금호타이어</td><td>엑스타 PS71</td><td>스포츠 UHP</td><td>민첩한 핸들링 반응성과 빗길 배수</td><td>35,000~45,000 km</td></tr>
+              <tr><td>금호타이어</td><td>크루젠 HP71</td><td>SUV 프리미엄</td><td>도심형 SUV 전용 최고급 정숙성</td><td>55,000~65,000 km</td></tr>
+              <tr><td>금호타이어</td><td>크루젠 프리미엄 KL33</td><td>SUV 스탠다드</td><td>안정적인 제동 및 실속형 구성</td><td>50,000~60,000 km</td></tr>
+              <tr><td>금호타이어</td><td>솔루스 4S HA32</td><td>올웨더 (3PMSF)</td><td>사계절 전천후 V패턴 주행력</td><td>45,000~55,000 km</td></tr>
+              <tr><td>금호타이어</td><td>이노뷔 프리미엄 (EnnoV)</td><td>전기차 전용</td><td>EV 고하중 지지 HLC 기술 탑재</td><td>50,000~60,000 km</td></tr>
+              <tr><td>금호타이어</td><td>윈터크래프트 WP72</td><td>겨울용 (Winter)</td><td>고급 세단 전용 저온 안전 제동</td><td>계절 전용 운용</td></tr>
+
+              <tr><td>넥센타이어</td><td>엔페라 슈프림</td><td>프리미엄 컴포트</td><td>동급 최장 마일리지 및 승차감</td><td>65,000~80,000 km</td></tr>
+              <tr><td>넥센타이어</td><td>엔페라 AU7</td><td>초프리미엄 컴포트</td><td>흡음 패드 장착 저소음 특화</td><td>50,000~60,000 km</td></tr>
+              <tr><td>넥센타이어</td><td>로디안 GTX</td><td>SUV 투어링</td><td>우수한 내마모성 및 고속 내구성</td><td>60,000~70,000 km</td></tr>
+              <tr><td>넥센타이어</td><td>엔블루 4시즌</td><td>올웨더 (3PMSF)</td><td>유럽 시장 호평 전천후 트랙션</td><td>50,000~60,000 km</td></tr>
+              <tr><td>넥센타이어</td><td>엔페라 스포츠</td><td>스포츠 UHP</td><td>유럽 전문지 테스트 상위권 스포츠</td><td>35,000~45,000 km</td></tr>
+
+              <tr><td>미쉐린</td><td>파일럿 스포츠 4 (PS4)</td><td>스포츠 UHP</td><td>대중적 고성능 여름용의 글로벌 표준</td><td>35,000~45,000 km</td></tr>
+              <tr><td>미쉐린</td><td>파일럿 스포츠 5 (PS5)</td><td>스포츠 UHP 차세대</td><td>향상된 젖은 노면 그립 및 긴 마일리지</td><td>40,000~50,000 km</td></tr>
+              <tr><td>미쉐린</td><td>프라이머시 4 플러스</td><td>프리미엄 투어링</td><td>마모 한계 도달 시까지 유지되는 제동</td><td>60,000~70,000 km</td></tr>
+              <tr><td>미쉐린</td><td>크로스클라이밋 2 (CC2)</td><td>올웨더 (3PMSF)</td><td>전 세계 올웨더 시장 부동의 베스트셀러</td><td>60,000~75,000 km</td></tr>
+              <tr><td>미쉐린</td><td>e-프라이머시</td><td>친환경 EV 전용</td><td>극대화된 전비 효율과 긴 주행거리</td><td>55,000~65,000 km</td></tr>
+
+              <tr><td>콘티넨탈</td><td>울트라콘택트 UC6</td><td>밸런스 컴포트</td><td>짧은 젖은 노면 제동 거리와 내구성</td><td>50,000~60,000 km</td></tr>
+              <tr><td>콘티넨탈</td><td>맥스콘택트 MC6</td><td>스포츠 투어링</td><td>정밀한 조향 응답과 스포츠 그립</td><td>40,000~50,000 km</td></tr>
+              <tr><td>콘티넨탈</td><td>프로콘택트 TX</td><td>순정 프리미엄</td><td>수입 및 국산 고급차 OE 채택 승차감</td><td>50,000~60,000 km</td></tr>
+              <tr><td>콘티넨탈</td><td>올시즌콘택트 2</td><td>올웨더 (3PMSF)</td><td>모든 기후 조건 최적화 연비와 안전</td><td>50,000~60,000 km</td></tr>
+
+              <tr><td>브리지스톤</td><td>투란자 세레니티 플러스</td><td>컴포트 롱라이프</td><td>압도적인 트레드웨어 600 긴 수명</td><td>70,000~90,000 km</td></tr>
+              <tr><td>브리지스톤</td><td>투란자 T005</td><td>투어링 플래그십</td><td>고속 안정성과 뛰어난 배수 능력</td><td>50,000~60,000 km</td></tr>
+              <tr><td>브리지스톤</td><td>포텐자 스포트</td><td>하이퍼 스포츠</td><td>트랙 주행 겸용 강력한 그립력</td><td>30,000~40,000 km</td></tr>
+
+              <tr><td>피렐리</td><td>피제로 (P Zero PZ4)</td><td>슈퍼스포츠 UHP</td><td>고성능 수입차 전용 완벽한 횡접지력</td><td>30,000~40,000 km</td></tr>
+              <tr><td>피렐리</td><td>신투라토 P7</td><td>친환경 그랜드투어링</td><td>낮은 회전 저항과 쾌적한 장거리 승차감</td><td>50,000~60,000 km</td></tr>
+
+              <tr><td>굿이어</td><td>이글 F1 어시메트릭 6</td><td>스포츠 UHP</td><td>전동화 대응 고성능 및 우천 제동력</td><td>38,000~48,000 km</td></tr>
+              <tr><td>요코하마</td><td>어드반 플레바 V701</td><td>스트리트 스포츠</td><td>스포티한 핸들링 감각과 젖은 노면 제어</td><td>35,000~45,000 km</td></tr>
+              <tr><td>던롭</td><td>뷰로 VE303</td><td>컴포트 프리미엄</td><td>특수 흡음 스폰지 내장 정숙성 특화</td><td>50,000~60,000 km</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="section-price">
+        <h2>4. 타이어 교체 비용 견적 비교 및 가격 계산 시뮬레이션</h2>
+        <p>타이어 교체 비용은 휠 인치 규격, 브랜드 원산지(국산/수입), 세부 등급(가성비/프리미엄/고성능)에 따라 크게 달라집니다. 4본 전체 교체 시 휠 밸런스, 휠 얼라인먼트 조정, TPMS(공기압 센서) 이식 비용이 함께 발생하므로 종합적인 견적 비교가 필수적입니다.</p>
+
+        <h3>2026년 휠 사이즈별 4본 세트 평균 교체 가격표</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>휠 인치 규격</th>
+                <th>가성비 스탠다드 (국산)</th>
+                <th>프리미엄 컴포트 (국산)</th>
+                <th>올웨더/수입 프리미엄</th>
+                <th>고성능 스포츠/전기차 전용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>15 ~ 16 인치 (아반떼, K3 등)</strong></td>
+                <td>28만원 ~ 36만원</td>
+                <td>38만원 ~ 48만원</td>
+                <td>48만원 ~ 62만원</td>
+                <td>52만원 ~ 68만원</td>
+              </tr>
+              <tr>
+                <td><strong>17 ~ 18 인치 (쏘나타, K5, 투싼)</strong></td>
+                <td>38만원 ~ 48만원</td>
+                <td>52만원 ~ 66만원</td>
+                <td>68만원 ~ 88만원</td>
+                <td>74만원 ~ 98만원</td>
+              </tr>
+              <tr>
+                <td><strong>19 ~ 20 인치 (그랜저, 제네시스 G80, 싼타페)</strong></td>
+                <td>52만원 ~ 68만원</td>
+                <td>72만원 ~ 95만원</td>
+                <td>98만원 ~ 135만원</td>
+                <td>115만원 ~ 165만원</td>
+              </tr>
+              <tr>
+                <td><strong>21 ~ 22 인치 (GV80, 수입 대형 SUV)</strong></td>
+                <td>78만원 ~ 98만원</td>
+                <td>105만원 ~ 140만원</td>
+                <td>145만원 ~ 195만원</td>
+                <td>170만원 ~ 260만원</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="calc-card">
+          <h3>내 차 타이어 교체 예상 견적 계산기</h3>
+          <p>차량 크기와 선호하는 타이어 종류를 선택하여 대략적인 총 교체 예상 비용을 확인해 보세요.</p>
+          <div class="calc-row">
+            <div class="form-group">
+              <label for="tire-size">휠 규격 선택</label>
+              <select id="tire-size">
+                <option value="1">15-16인치 (준중형/소형)</option>
+                <option value="2" selected>17-18인치 (중형/준중형SUV)</option>
+                <option value="3">19-20인치 (대형세단/중형SUV)</option>
+                <option value="4">21-22인치 (대형SUV/고성능)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="tire-grade">타이어 종류 및 등급</label>
+              <select id="tire-grade">
+                <option value="standard">국산 가성비 스탠다드</option>
+                <option value="premium" selected>국산 프리미엄 컴포트</option>
+                <option value="allweather">올웨더 / 수입 프리미엄</option>
+                <option value="ev-sport">전기차 전용 / 스포츠 UHP</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="extra-service">추가 작업 선택</label>
+              <select id="extra-service">
+                <option value="0">기본 장착 + 고속 휠밸런스</option>
+                <option value="50000" selected>기본 장착 + 3D 휠 얼라인먼트</option>
+              </select>
+            </div>
+          </div>
+          <div class="calc-result-box">
+            <span>4본 세트 장착비 포함 예상 총 금액: </span>
+            <span class="calc-price">약 640,000원 ~ 720,000원</span>
+            <p style="font-size:0.85rem; color:#64748b; margin-top:6px;">지역별 매장 특가 할인 및 온라인 다이렉트 쿠폰 적용 여부에 따라 실제 견적은 달라질 수 있습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="section-purchase">
+        <h2>5. 가장 저렴한곳 찾는 법: 온라인 다이렉트 성지 좌표 vs 대리점 vs 렌탈 비교</h2>
+        <p>자동차 동호회와 커뮤니티(보배드림, 에펨코리아, 디시인사이드 차갤 등)의 실제 내돈내산 교체 후기를 분석하면 구매 경로에 따라 동일 모델 기준 10만원에서 최대 30만원 이상의 가격 격차가 발생합니다.</p>
+
+        <h3>구매 채널별 장단점 및 비용 차이점</h3>
+        <ul>
+          <li><strong>온라인 다이렉트 최저가 구매 (가장 추천):</strong> 네이버 쇼핑, 다나와, 전문 타이어 플랫폼(타이어픽, 12시 타이어 등)에서 최저가를 검색한 후 가까운 무료 장착점 또는 공임나라로 배송시키는 방식입니다. 유통 마진이 빠져 가장 저렴한 가격에 교체할 수 있습니다.</li>
+          <li><strong>오프라인 브랜드 전문 대리점 (티스테이션, 타이어프로, 타이어뱅크 등):</strong> 접근성이 뛰어나고 당일 즉시 교체가 가능하지만 매장별 임대료와 인건비로 인해 온라인 대비 20~30% 높은 견적이 제시될 수 있으므로 사전 전화 문의 및 가격 확정이 필수적입니다.</li>
+          <li><strong>타이어 렌탈 서비스 (넥센 엔페라 렌탈 등):</strong> 초기 목돈 지출(계약금 0원) 없이 12개월, 24개월, 36개월 약정 기간 동안 월 1~2만원대의 렌탈료를 납부하는 방식입니다. 제휴 신용카드 전월 실적 할인을 적용하면 월 0원 혜택까지 가능하며, 약정 기간 내 타이어 파손 시 1:1 무상 교체 및 주기적인 방문 점검 서비스가 제공됩니다.</li>
+        </ul>
+
+        <div class="accent-box">
+          <h4>현명한 타이어 교체 계약 전 필수 확인 체크리스트</h4>
+          <ol>
+            <li><strong>추가 공임 유무 확인:</strong> 휠 탈부착, 고속 휠 밸런스, TPMS 센서 이식비(개당 5천원~1만원), 폐타이어 처리비가 무료인지 유료인지 계약 전 확인.</li>
+            <li><strong>3D 휠 얼라인먼트 비용:</strong> 타이어 4본 교체 시 얼라인먼트 50% 할인 또는 무료 지원 프로모션 여부 검토.</li>
+            <li><strong>위약금 및 해지 조건:</strong> 타이어 렌탈 계약 시 1년 이내 중도 해지에 따른 위약금 산정 기준과 소유권 이전 규정 확인.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="section-ev">
+        <h2>6. 전기차(EV) 전용 타이어의 종류와 일반 내연기관 타이어의 차이점</h2>
+        <p>전기차(아이오닉, EV6, 테슬라 모델3/Y 등)의 보급이 확대되면서 전기차 전용 타이어 종류에 대한 수요가 급증하고 있습니다. 일반 내연기관용 타이어를 전기차에 장착할 경우 빠른 이상 마모와 심한 노면 소음, 주행거리 감소 문제를 겪게 됩니다.</p>
+
+        <div class="metric-grid">
+          <div class="metric-card">
+            <div class="metric-title">전기차 타이어의 4대 핵심 기술</div>
+            <p><strong>1. 고하중 지지 설계 (HL/XL):</strong> 배터리로 인해 내연기관 대비 300~500kg 무거운 중량을 견디기 위해 고강도 아라미드 하이브리드 보강 벨트 적용.</p>
+            <p><strong>2. 초저소음 폴리우레탄 흡음재:</strong> 엔진 소음이 없어 상대적으로 크게 들리는 타이어 내부 공명음을 차단하는 폼 스펀지 내장.</p>
+            <p><strong>3. 즉각적인 토크 대응 내마모성:</strong> 0 RPM부터 뿜어져 나오는 최대 토크로 인한 슬립 현상을 방지하는 고점도 컴파운드 배합.</p>
+            <p><strong>4. 극저회전저항 (전비 향상):</strong> 1회 충전당 주행거리를 5~10% 이상 개선하는 유선형 사이드월 및 낮은 구름저항 트레드 패턴.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="section-maintenance">
+        <h2>7. 타이어 마모도 자가 점검법 및 수명 연장 관리 팁</h2>
+        <p>타이어의 마모 상태와 공기압 관리는 운전자의 생명과 직결됩니다. 정기적인 자가 점검을 통해 편마모를 방지하고 타이어의 기대 수명을 최대 20,000km 이상 연장할 수 있습니다.</p>
+
+        <h3>타이어 수명 점검 및 관리 방법</h3>
+        <ul>
+          <li><strong>100원 동전 마모 측정법:</strong> 100원 동전을 거꾸로 타이어 트레드 홈에 넣었을 때 이순신 장군의 사모(모자)가 절반 이상 보인다면 잔여 트레드가 3mm 이하로 떨어진 것이므로 즉시 교체해야 합니다.</li>
+          <li><strong>마모 한계선 돌출 확인:</strong> 트레드 홈 사이에 위치한 1.6mm 높이의 사각 돌기(마모 한계선)가 외부 바닥면과 일직선으로 닿아 있다면 법적 제동력을 상실한 상태입니다.</li>
+          <li><strong>적정 공기압 유지:</strong> 운전석 문짝 B필러 안쪽에 적힌 표준 공기압을 기준으로 매월 1회 점검하며, 겨울철에는 기온 강하로 공기 부피가 줄어들므로 기준치 대비 5~10% 높여 주입합니다.</li>
+          <li><strong>10,000km 주기 위치 교환:</strong> 전륜구동 차량은 앞 타이어 마모가 2배 이상 빠르므로 만 킬로미터마다 앞뒤 타이어 위치를 교환하여 4본의 마모도를 균등하게 유지합니다.</li>
+        </ul>
+      </section>
+
+      <!-- Section 8 -->
+      <section id="section-faq">
+        <h2>8. 2026년 타이어 종류 관련 자주 묻는 질문 (FAQ)</h2>
+        <dl class="faq-list">
+          <dt>Q1: 타이어는 2짝만 먼저 교체해도 되나요? 앞바퀴와 뒷바퀴 중 어디에 끼워야 하나요?</dt>
+          <dd>A: 예산 문제로 2짝만 교체할 경우, 전륜구동과 후륜구동에 상관없이 신품 타이어를 <strong>뒷바퀴(후륜)</strong>에 장착하는 것이 안전합니다. 빗길 고속 코너링 시 뒷바퀴 접지력이 부족하면 차량 뒷부분이 회전하는 오버스티어(피시테일 현상)가 발생하여 대형 사고로 이어지기 때문입니다.</dd>
+
+          <dt>Q2: 사계절 타이어를 장착 중인데 윈터(겨울용) 타이어를 꼭 따로 사야 하나요?</dt>
+          <dd>A: 강원도나 산간 지역, 눈이 자주 오는 경기 북부 거주자, 또는 후륜구동 스포츠 세단을 운행하는 경우에는 영상 7도 이하에서 안전을 위해 윈터 타이어 교체가 필수적입니다. 반면 도심 위주 주행이고 눈길 제설이 빠른 평지 지역이라면 3PMSF 인증을 받은 올웨더 타이어(미쉐린 CC2, 한국 키너지 4S2 등)로 1년 내내 안전하게 운행하는 것이 경제적인 대안입니다.</dd>
+
+          <dt>Q3: 타이어 렌탈 서비스를 이용하면 환불이나 중도 해지 시 위약금이 많이 나오나요?</dt>
+          <dd>A: 타이어 렌탈은 계약 시 장착된 소모품 특성상 중도 해지 시 잔여 렌탈료의 일정 비율(통상 20~30%)과 등록비, 탈거 공임 등의 위약금이 발생합니다. 따라서 24개월 또는 36개월 약정 기간 동안 꾸준히 이용할 계획이며 정기적인 무상 케어와 카드 할인 혜택을 온전히 누릴 수 있을 때 가입하는 것이 유리합니다.</dd>
+
+          <dt>Q4: 인공지능(AI, ChatGPT, 제미나이)을 활용하여 타이어를 추천받는 방법은 어떤가요?</dt>
+          <dd>A: 생성형 AI 챗봇에게 본인의 주행 패턴(예: 연간 주행거리 1만5천km, 고속도로 70%, 조용한 승차감 선호, 예산 60만원대)을 구체적으로 제시하면 차종에 맞는 최적의 타이어 종류와 모델 2~3가지를 빠르게 압축 추천받을 수 있어 유용합니다. 단, 최종 장착 전 실제 규격 일치 여부와 최근 실사용자 후기를 대조 확인하는 과정이 필요합니다.</dd>
+
+          <dt>Q5: 타이어 트레드웨어(Treadwear) 수치가 높을수록 무조건 좋은 타이어인가요?</dt>
+          <dd>A: 트레드웨어 수치가 높으면(예: 600~700) 수명(마일리지)은 매우 길어지지만, 상대적으로 고무가 단단해져 고속 접지력과 승차감이 다소 떨어질 수 있습니다. 반대로 스포츠 UHP 타이어는 트레드웨어가 200~300 수준으로 낮지만 강력한 제동력과 코너링 그립을 제공합니다. 따라서 본인의 운전 스타일에 맞는 타이어 종류를 선택하는 것이 가장 현명합니다.</dd>
+        </dl>
+      </section>
+
+      <!-- Section 9: External Resources -->
+      <section id="section-ref">
+        <h2>9. 신뢰할 수 있는 공식 정보 출처 및 참조 사이트</h2>
+        <p>타이어 규격별 안전 기준, 에너지 소비효율 등급, 리콜 정보 및 기술 백서는 아래 공인된 공식 웹사이트를 통해 확인할 수 있습니다.</p>
+        <div class="ref-section">
+          <ul class="ref-list">
+            <li>
+              <strong>타이어 종합 스펙 및 유지보수 가이드 포털:</strong>
+              <a href="https://tirerentztrustg.koreahankang.com" target="_blank" rel="noopener noreferrer">https://auto.reliabledone.com - 차종별 타이어 규격 및 기술 상세 분석 리포트</a>
+            </li>
+            <li>
+              <strong>나무위키 타이어 백과사전:</strong>
+              <a href="https://namu.wiki/w/%ED%83%80%EC%9D%B4%EC%96%B4" target="_blank" rel="noopener noreferrer">https://namu.wiki/w/타이어 - 타이어 역사, 구조, 종류 및 제조 기술 해설</a>
+            </li>
+            <li>
+              <strong>한국에너지공단 자동차 표시 효율 등급 시스템:</strong>
+              <a href="https://www.energy.or.kr" target="_blank" rel="noopener noreferrer">https://www.energy.or.kr - 타이어 회전저항(연비) 및 젖은 노면 제동력 공식 등급 조회</a>
+            </li>
+            <li>
+              <strong>한국교통안전공단 자동차안전연구원:</strong>
+              <a href="https://www.kotsa.or.kr" target="_blank" rel="noopener noreferrer">https://www.kotsa.or.kr - 자동차 안전 기준 및 타이어 결함 리콜 안내</a>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
-  </body>
-</html>
+  </div>
+
+  
